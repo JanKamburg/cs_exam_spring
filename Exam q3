@@ -25,8 +25,7 @@ public class Stack{
    public Link peek(Link newlink){
     return head;}
     
-  .......
-  
+
 --------------------------------------------------------------
   
 ----------------------------------------------------------------
@@ -48,6 +47,40 @@ public class Queue{
 --------------------------------------------------------------
 
 a)  Explain what a Stack is.  Specify if it is LIFO or FIFO.
+    A stack is like pile. You add up from the top and the first element is the last one added. So it is LIFO.
 b)  Complete the Stack class by writing the "pop" method.
+  public Link pop() {
+        Link Output = head;
+        this.head = this.head.next;
+        length = length - 1;
+        return Output;
+    }
 c)  Explain what a Queue is.  Specify if it is LIFO or FIFO.
+    A queue is like a line at lunch. You can add it up the first object that is there will be used the first. So it is FIFO.
 d)  Complete the Queue class by writing the "peek" and "remove" methods.
+    public Link peek(){
+        Link Temp = this.head;
+        while(true){
+            if(Temp.next != null){
+                Temp = Temp.next;
+            }
+            else{
+                return Temp;
+            }
+        }
+    }
+
+    public Link remove(){
+        Link Temp = this.head;
+        while(true){
+            if(Temp.next.next != null){
+                Temp = Temp.next;
+            }
+            else{
+                Link Output = Temp.next;
+                Temp.next = null;
+                return Output;
+            }
+        }
+    }
+    
