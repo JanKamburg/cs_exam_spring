@@ -11,4 +11,18 @@ public interface Greetings{
 -----------------------------------------------------
 
 a)  Explain what an interface is.
+    An interface is a class which can be used as a base for another class. It holds variables and methods that the class whic uses the interface should have.
 b)  Write a complete class for a language speaker of your choice, like ItalianSpeaker, which fully implements the interface.
+
+public class GermanSpeaker implements Greetings {
+
+    @Override
+    public String FormalHello() {
+        return "Guten Tag!";
+    }
+
+    @Override
+    public String CasualHello() {
+        return "Moin!";
+    }
+}
